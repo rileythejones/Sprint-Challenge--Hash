@@ -1,10 +1,15 @@
 def has_negatives(a):
 
-    """
-    YOUR CODE HERE
-    """
-
-    return result
+    cache = {}
+    for x in a:
+        for y in a:
+            look = x + y
+            if look == 0:
+                if x > 0:
+                    cache[x] = y
+                    result = list(cache)
+                
+    return result 
 
 
 if __name__ == "__main__":

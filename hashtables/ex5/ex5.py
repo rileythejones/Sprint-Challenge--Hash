@@ -1,10 +1,18 @@
+import re 
+
+
 def finder(files, queries):
 
-    """
-    YOUR CODE HERE
-    """
+    cache = {}
+    for x in files:
+        cache[x] = re.findall("([^\/]+$)", x)[0]
 
-    return result
+    results = []
+    for x in cache:
+        if cache[x] in queries:
+            results.append(x)
+    
+    return results
 
 
 if __name__ == "__main__":
